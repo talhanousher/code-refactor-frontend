@@ -15,6 +15,8 @@ import { Loader2, Code } from "lucide-react";
 import "prismjs/themes/prism-tomorrow.css";
 import Prism from "prismjs";
 import { motion } from "framer-motion";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default function Home() {
   const [code, setCode] = useState("");
@@ -106,7 +108,7 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          {description}
+          {<ReactMarkdown remarkPlugins={[remarkGfm]}>{description}</ReactMarkdown>}
         </motion.p>
       )}
 
