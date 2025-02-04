@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { refactorCode, refactorCodeDescription, convertCode, analyzeComplexity } from "@/lib/api";
+import { refactorCode, convertCode, analyzeComplexity } from "@/lib/api";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -18,7 +18,7 @@ export default function Home() {
   const [targetLanguage, setTargetLanguage] = useState("python");
   const [operation, setOperation] = useState("refactor");
   const [result, setResult] = useState("");
-  const [description, setDescription] = useState("");
+  const [description] = useState("");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
